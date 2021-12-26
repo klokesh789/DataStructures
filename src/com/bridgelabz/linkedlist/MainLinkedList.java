@@ -9,6 +9,7 @@ public class MainLinkedList {
         myLinkedList.add(myFirstNode);
         myLinkedList.append(myThirdNode);
         myLinkedList.insert(myFirstNode,mySecondNode);
+        myLinkedList.pop();
         myLinkedList.printMyNodes();
     }
 }
