@@ -15,5 +15,9 @@ private final MyLinkedList myLinkedList;
 	public void printQueue() {
 		myLinkedList.printMyNodes();
 	}
+	public int dequeue() {
+		return myLinkedList.pop();
+		
+	}
 
 }

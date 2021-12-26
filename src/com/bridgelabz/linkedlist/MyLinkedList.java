@@ -116,6 +116,15 @@ public class MyLinkedList {
 	        System.out.println(myNodes);
 
 	    }
+	public int pop() {
+		if(this.head == null) {
+   		 return 0;
+   	 }
+   	 Integer currentValue = (Integer) head.getKey();
+   	 this.head = this.head.getNext();
+   	 return currentValue;
+		
+	}
 
 
 }
