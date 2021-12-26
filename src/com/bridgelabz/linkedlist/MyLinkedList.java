@@ -43,7 +43,16 @@ public class MyLinkedList {
         tempNode.setNext(null);
         return tail;
         }
-        
+    public void search(INode myNode) {
+        INode tempNode = this.head;
+        while(tempNode != null ) {
+            if (myNode.getKey() == tempNode.getKey()) {
+                System.out.println("Element found :"+myNode.getKey());
+                break;
+            }
+            tempNode=tempNode.getNext();
+        }
+    }
     public  void printMyNodes(){
 	        StringBuffer myNodes = new StringBuffer("My Nodes:");
 	        INode tempNode = head;
