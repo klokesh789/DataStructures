@@ -7,6 +7,7 @@ public class BinaryTreeMain {
         myBinaryTree.add(56);
         myBinaryTree.add(30);
         myBinaryTree.add(70);
+        myBinaryTree.searchBST(60);
         int size = myBinaryTree.getSize();
         System.out.println("Size of binary tree is: "+size);
         System.out.println("Binary Tree is :");

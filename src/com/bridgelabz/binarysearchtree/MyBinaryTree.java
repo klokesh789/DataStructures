@@ -24,6 +24,34 @@ public class MyBinaryTree<K extends Comparable<K>> {
     public int getSize(){
         return this.getSizeRecursively(root);
     }
+    public void searchBST(K value) {
+		int counter = 0;
+		MyBinaryNode<K> temp=root;
+		if(temp != null) {
+			while(temp.key.compareTo(value) < 0) {
+				System.out.println(temp.key);
+				temp = temp.right;
+			}
+			if(root.key == value) 
+				counter++;
+				while(temp.key.compareTo(value) > 0) {
+					temp = temp.left;
+				}
+				if(temp.key == value) {
+					counter++;
+				}
+				if(counter > 0) {
+					System.out.println(true);
+					System.out.println("Element is present");
+				}
+				else {
+					System.out.println(false);
+					System.out.println("Element is not present");
+				}
+			}
+			
+		}
+
     
     private int getSizeRecursively(MyBinaryNode<K> current) {
         return current == null ? 0 : 1 + this.getSizeRecursively(current.left) + this.getSizeRecursively(current.right);
