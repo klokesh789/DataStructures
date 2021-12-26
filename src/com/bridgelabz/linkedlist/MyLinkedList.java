@@ -53,6 +53,19 @@ public class MyLinkedList {
             tempNode=tempNode.getNext();
         }
     }
+    public void insertUsingKey(INode myNode,INode value){
+        INode tempNode = this.head;
+        while(tempNode != null ) {
+            if (myNode.getKey() == tempNode.getKey()) {
+                INode temp =tempNode.getNext();
+                tempNode.setNext(value);
+                tempNode = tempNode.getNext();
+                tempNode.setNext(temp);
+                break;
+            }
+            tempNode=tempNode.getNext();
+        }
+    }
     public  void printMyNodes(){
 	        StringBuffer myNodes = new StringBuffer("My Nodes:");
 	        INode tempNode = head;
