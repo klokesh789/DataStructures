@@ -21,6 +21,14 @@ public class MyLinkedList {
 	       this.head.setNext(tempNode);
 	        }
     }
+    public void isEmpty(){
+        if(this.head == null){
+            System.out.println("Linked list is Empty");
+        }
+        else{
+            System.out.println("Linked list Not Empty");
+        }
+    }
     public void append(INode newNode){
 	        if(this.head == null){
 	            this.head=newNode;
