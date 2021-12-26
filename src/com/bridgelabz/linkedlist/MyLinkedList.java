@@ -1,35 +1,35 @@
 package com.bridgelabz.linkedlist;
 
 public class MyLinkedList {
-	 public   INode head;
+	public   INode head;
 	 public   INode tail;
 
-    public MyLinkedList(){
-        this.head = null;
-        this.tail = null;
-    }
-    public void add(INode newNode) {
-        if(this.tail == null){
-         this.tail=newNode;
-      }
-        if(this.head== null){
-          this.head=newNode;
+   public MyLinkedList(){
+       this.head = null;
+       this.tail = null;
+   }
+   public void add(INode newNode) {
+       if(this.tail == null){
+        this.tail=newNode;
+     }
+       if(this.head== null){
+         this.head=newNode;
 	        }
-        else{
+       else{
 	       INode tempNode = this.head;
 	       this.head = newNode;
 	       this.head.setNext(tempNode);
 	        }
-    }
-    public void isEmpty(){
-        if(this.head == null){
-            System.out.println("Linked list is Empty");
-        }
-        else{
-            System.out.println("Linked list Not Empty");
-        }
-    }
-    public void append(INode newNode){
+   }
+   public void isEmpty(){
+       if(this.head == null){
+           System.out.println("Linked list is Empty");
+       }
+       else{
+           System.out.println("Linked list Not Empty");
+       }
+   }
+   public void append(INode newNode){
 	        if(this.head == null){
 	            this.head=newNode;
 	        }
@@ -39,71 +39,71 @@ public class MyLinkedList {
 	            this.tail.setNext(newNode);
 	            this.tail=newNode;
 	        }
-    }
-    public void insert(INode myNode ,INode newNode){
-        INode tempNode = myNode.getNext();
-        myNode.setNext(newNode);
-        newNode.setNext(tempNode);
-        }
-    public INode popLast(){
-        INode tempNode = this.head;
-        tempNode = tempNode.getNext();
-        tempNode.setNext(null);
-        return tail;
-        }
-    public void search(INode myNode) {
-        INode tempNode = this.head;
-        while(tempNode != null ) {
-            if (myNode.getKey() == tempNode.getKey()) {
-                System.out.println("Element found :"+myNode.getKey());
-                break;
-            }
-            tempNode=tempNode.getNext();
-        }
-    }
-    public void insertUsingKey(INode myNode,INode value){
-        INode tempNode = this.head;
-        while(tempNode != null ) {
-            if (myNode.getKey() == tempNode.getKey()) {
-                INode temp =tempNode.getNext();
-                tempNode.setNext(value);
-                tempNode = tempNode.getNext();
-                tempNode.setNext(temp);
-                break;
-            }
-            tempNode=tempNode.getNext();
-        }
-    }
-    public void deleteKey(INode myNode ){
-        INode tempNode = this.head;
-        while(tempNode != null ) {
-            if (myNode.getKey() == tempNode.getKey()) {
-                INode temp =tempNode.getNext();
-                //tempNode= null;
-                INode demoNode = this.head;
-                demoNode = demoNode.getNext();
-                demoNode.setNext(temp);
-                break;
-            }
-            tempNode=tempNode.getNext();
-        }
-    }
-    public int size(){
-        int counter = 1;
-        INode tempNode = this.head;
-        while(tempNode != this.tail) {
-            if (tempNode.getNext() == null) {
+   }
+   public void insert(INode myNode ,INode newNode){
+       INode tempNode = myNode.getNext();
+       myNode.setNext(newNode);
+       newNode.setNext(tempNode);
+       }
+   public INode popLast(){
+       INode tempNode = this.head;
+       tempNode = tempNode.getNext();
+       tempNode.setNext(null);
+       return tail;
+       }
+   public void search(INode myNode) {
+       INode tempNode = this.head;
+       while(tempNode != null ) {
+           if (myNode.getKey() == tempNode.getKey()) {
+               System.out.println("Element found :"+myNode.getKey());
+               break;
+           }
+           tempNode=tempNode.getNext();
+       }
+   }
+   public void insertUsingKey(INode myNode,INode value){
+       INode tempNode = this.head;
+       while(tempNode != null ) {
+           if (myNode.getKey() == tempNode.getKey()) {
+               INode temp =tempNode.getNext();
+               tempNode.setNext(value);
+               tempNode = tempNode.getNext();
+               tempNode.setNext(temp);
+               break;
+           }
+           tempNode=tempNode.getNext();
+       }
+   }
+   public void deleteKey(INode myNode ){
+       INode tempNode = this.head;
+       while(tempNode != null ) {
+           if (myNode.getKey() == tempNode.getKey()) {
+               INode temp =tempNode.getNext();
+               //tempNode= null;
+               INode demoNode = this.head;
+               demoNode = demoNode.getNext();
+               demoNode.setNext(temp);
+               break;
+           }
+           tempNode=tempNode.getNext();
+       }
+   }
+   public int size(){
+       int counter = 1;
+       INode tempNode = this.head;
+       while(tempNode != this.tail) {
+           if (tempNode.getNext() == null) {
 
-            } else {
-                tempNode = tempNode.getNext();
-                counter++;
-            }
+           } else {
+               tempNode = tempNode.getNext();
+               counter++;
+           }
 
-        }
-            System.out.println("Size of current Linked List is: "+counter);
-            return counter;
-    }
-    public  void printMyNodes(){
+       }
+           System.out.println("Size of current Linked List is: "+counter);
+           return counter;
+   }
+   public  void printMyNodes(){
 	        StringBuffer myNodes = new StringBuffer("My Nodes:");
 	        INode tempNode = head;
 	        while(tempNode.getNext()!= null){
@@ -118,13 +118,11 @@ public class MyLinkedList {
 	    }
 	public int pop() {
 		if(this.head == null) {
-   		 return 0;
-   	 }
-   	 Integer currentValue = (Integer) head.getKey();
-   	 this.head = this.head.getNext();
-   	 return currentValue;
+  		 return 0;
+  	 }
+  	 Integer currentValue = (Integer) head.getKey();
+  	 this.head = this.head.getNext();
+  	 return currentValue;
 		
 	}
-
-
 }

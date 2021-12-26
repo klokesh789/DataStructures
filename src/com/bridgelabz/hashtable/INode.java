@@ -1,10 +1,9 @@
-package com.bridgelabz.linkedlist;
+package com.bridgelabz.hashtable;
 
 public interface INode<K extends Comparable> {
-	K getKey();
+    K getKey();
     void setKey();
 
     INode getNext();
-    void setNext(INode tempNode);
-
+    void setNext(INode<K> tempNode);
 }
