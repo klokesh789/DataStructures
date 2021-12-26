@@ -66,6 +66,34 @@ public class MyLinkedList {
             tempNode=tempNode.getNext();
         }
     }
+    public void deleteKey(INode myNode ){
+        INode tempNode = this.head;
+        while(tempNode != null ) {
+            if (myNode.getKey() == tempNode.getKey()) {
+                INode temp =tempNode.getNext();
+                //tempNode= null;
+                INode demoNode = this.head;
+                demoNode = demoNode.getNext();
+                demoNode.setNext(temp);
+                break;
+            }
+            tempNode=tempNode.getNext();
+        }
+    }
+    public void size(){
+        int counter = 1;
+        INode tempNode = this.head;
+        while(tempNode != this.tail) {
+            if (tempNode.getNext() == null) {
+
+            } else {
+                tempNode = tempNode.getNext();
+                counter++;
+            }
+
+        }
+            System.out.println("Size of current Linked List is: "+counter);
+    }
     public  void printMyNodes(){
 	        StringBuffer myNodes = new StringBuffer("My Nodes:");
 	        INode tempNode = head;

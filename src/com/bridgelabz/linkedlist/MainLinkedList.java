@@ -10,8 +10,10 @@ public class MainLinkedList {
         myLinkedList.add(myFirstNode);
         myLinkedList.append(myThirdNode);
         myLinkedList.insert(myFirstNode,mySecondNode);
-        myLinkedList.insertUsingKey(mySecondNode,myFourthNode);
         myLinkedList.search(mySecondNode);
-        myLinkedList.printMyNodes();;
+        myLinkedList.insertUsingKey(mySecondNode,myFourthNode);
+        myLinkedList.deleteKey(myFourthNode);
+        myLinkedList.printMyNodes();
+        myLinkedList.size();
     }
 }
