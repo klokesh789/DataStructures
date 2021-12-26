@@ -88,7 +88,7 @@ public class MyLinkedList {
             tempNode=tempNode.getNext();
         }
     }
-    public void size(){
+    public int size(){
         int counter = 1;
         INode tempNode = this.head;
         while(tempNode != this.tail) {
@@ -101,6 +101,7 @@ public class MyLinkedList {
 
         }
             System.out.println("Size of current Linked List is: "+counter);
+            return counter;
     }
     public  void printMyNodes(){
 	        StringBuffer myNodes = new StringBuffer("My Nodes:");

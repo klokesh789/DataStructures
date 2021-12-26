@@ -15,5 +15,17 @@ private final MyLinkedList myLinkedList;
 	public void printStack() {
 		myLinkedList.printMyNodes();
 	}
-
+	public Integer peek() {
+		return (Integer)myLinkedList.head.getKey();
+	}
+	public INode pop() {
+		return myLinkedList.popLast();
+		
+	}
+	public int size() {
+		return myLinkedList.size();
+	}
+	public void isEmpty() {
+		myLinkedList.isEmpty();
+	}
 }
