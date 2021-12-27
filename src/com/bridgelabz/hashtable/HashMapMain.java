@@ -1,22 +1,16 @@
 package com.bridgelabz.hashtable;
 
 public class HashMapMain {
-	public static void main(String[] args) {
-
-		String sentence = "to be or not to be";
-		MyHashMap<String,Integer> myHashMap = new MyHashMap<>();
-		String[] words = sentence.toLowerCase().split(" ");
-		for(String word: words) {
-			myHashMap.get(word);
-			Integer value = myHashMap.get(word);
-			if(value == null)
-				value = 1;
-			else
-				value = value + 1;
-			myHashMap.add(word,value);
+	public static void main(String[] args) {	
+		HashMapService HashMap = new HashMapService();
+		String givenString = "To be or not to be";
+		String[] myStr = givenString.toLowerCase().split(" ");
+		for (String string : myStr)
+		{
+			HashMap.put(string, 1);
 		}
-		int frequency = myHashMap.get("to");
-		System.out.println(myHashMap);
+		HashMap.print();
 	}
+
 
 }
