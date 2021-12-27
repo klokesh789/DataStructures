@@ -2,8 +2,9 @@ package com.bridgelabz.hashtable;
 
 public class HashMapMain {
 	public static void main(String[] args) {	
+
 		HashMapService hashMap1 = new HashMapService();
-		String givenSentence = "“To be or not to be”";
+		String givenSentence = "ï¿½To be or not to beï¿½";
 		String[] myStr1 = givenSentence.toLowerCase().split(" ");
 		for (String string : myStr1) 
 		{
@@ -19,4 +20,16 @@ public class HashMapMain {
 		}
 		hashMap2.print();
 	}
+
+		HashMapService HashMap = new HashMapService();
+		String givenString = "To be or not to be";
+		String[] myStr = givenString.toLowerCase().split(" ");
+		for (String string : myStr)
+		{
+			HashMap.put(string, 1);
+		}
+		HashMap.print();
+	}
+
+
 }
