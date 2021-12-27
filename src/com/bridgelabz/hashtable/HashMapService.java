@@ -7,14 +7,14 @@ public class HashMapService {
 	{
 		bucket = new LinkedList[16];
 	}
-
 	// method to add linked list at particular index of hash table  
+
 	public void put(String key , int value)
 	{
 		int bucketIndex = generateBucketIndex(key);
 		LinkedList isLinkedListPresent = bucket[bucketIndex];
-
 		//checks if already linked list present at index
+
 		if (isLinkedListPresent != null)
 		{
 			Node searchNode  = isLinkedListPresent.search(key);
@@ -28,6 +28,7 @@ public class HashMapService {
 			}
 		}
 		//creates a new linked list at that index
+
 		else
 		{
 			LinkedList newLinkList = new LinkedList();
@@ -35,10 +36,15 @@ public class HashMapService {
 			bucket[bucketIndex] = newLinkList;
 		}
 	}
-
 	//method to fetch a particular key value
-	public int get(String key) 
-	{
+	
+	private int generateBucketIndex(String key) {
+		int hashCode = key.hashCode();
+		int bucketIndex = hashCode % 10;
+		return bucketIndex;
+	}
+
+	public int get(String key) {
 		int bucketIndex = generateBucketIndex(key);
 		LinkedList searchLinkList = bucket[bucketIndex];
 		if (searchLinkList != null)
@@ -57,9 +63,10 @@ public class HashMapService {
 		searchLinkList.delete(key);
 	}
 
-	//method to print all the key values present in hash map
-	public void print()
-	{
+	
+	public void print() {
+		// TODO Auto-generated method stub
+
 		for (int i = 0; i < bucket.length; i++)
 		{
 			LinkedList node = bucket[i];
@@ -80,6 +87,7 @@ public class HashMapService {
 				}
 			}
 		}
+
 		System.out.println("-------------------------");
 	}
 
@@ -87,5 +95,7 @@ public class HashMapService {
 		int hashCode = key.hashCode();
 		int bucketIndex =Math.abs(hashCode) % 10;
 		return bucketIndex;
+	}
+	
 	}
 }
